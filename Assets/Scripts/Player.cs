@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     if(Input.GetKey(KeyCode.D) && transform.position.x < width){
     transform.Translate(Vector2.right * Time.deltaTime * _speed);
     }
-    if(Input.GetKey(KeyCode.Space && !_isShooting){
+    if(Input.GetKey(KeyCode.Space) && !_isShooting){
     StartCoroutine(Shoot());
     }
 
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         _isShooting = true;
 
         Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
-        yield return new WaitForSecond(_cooldown);
+        yield return new WaitForSeconds(_cooldown);
 
         _isShooting= false;
     }
