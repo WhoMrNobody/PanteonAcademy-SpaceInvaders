@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] GameObject _bulletPrefab;
+    [SerializeField] ObjectPooling _objectPooling = null;
 
     public float width;
     Camera _camera;
@@ -17,12 +18,6 @@ public class Player : MonoBehaviour
         _camera = Camera.main;
         width = ((1 / (_camera.WorldToViewportPoint(new Vector3(1, 1, 0)).x - .5f) / 2) - 0.25f);
     }
-    
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {
@@ -46,7 +41,9 @@ public class Player : MonoBehaviour
     {
         _isShooting = true;
 
-        Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
+        //Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
+        GameObject obj = _objectPooling.GetPooledObject();
+        obj.transform.position = gameObject.transform.position; 
         yield return new WaitForSeconds(_cooldown);
 
         _isShooting= false;

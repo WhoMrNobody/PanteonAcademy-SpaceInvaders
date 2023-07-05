@@ -8,7 +8,14 @@ public class DestroyAfterSeconds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, _second);
+        //Destroy(gameObject, _second);
     }
 
+    void Update()
+    {
+        if(transform.position.y > 7f)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }

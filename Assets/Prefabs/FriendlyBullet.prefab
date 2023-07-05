@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7021929957923572701}
   - component: {fileID: 3245088918581620976}
   - component: {fileID: 6937693628306335536}
-  - component: {fileID: 7169617883500900459}
+  - component: {fileID: 2942613655786339576}
   - component: {fileID: 4719022780567733030}
   m_Layer: 0
   m_Name: FriendlyBullet
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.06726372, y: 0.37833878}
   m_EdgeRadius: 0
---- !u!114 &7169617883500900459
+--- !u!114 &2942613655786339576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4dfb46a621e05469e53e5934a29b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _second: 3
+  _second: 0
 --- !u!114 &4719022780567733030
 MonoBehaviour:
   m_ObjectHideFlags: 0
