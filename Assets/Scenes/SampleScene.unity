@@ -316,7 +316,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -347,6 +347,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &569012137 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3682706948104560320, guid: 81e0b2ae3d706d84f89bd34ee3523f93, type: 3}
+  m_PrefabInstance: {fileID: 2921170166985074536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64132bbdee2631d46bed4c55d4480e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &749843350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -819,6 +830,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1597052055}
   - component: {fileID: 1597052056}
+  - component: {fileID: 1597052057}
   m_Layer: 0
   m_Name: AlienParent
   m_TagString: Untagged
@@ -864,7 +876,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd52f45fbda11543b8de0fbb397fc21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pooling: {fileID: 1597052057}
   _bulletPrefab: {fileID: 2711091180080562424, guid: c486fd428b1c0204d870f8500160c226, type: 3}
+  _player: {fileID: 569012137}
+--- !u!114 &1597052057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597052054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c538de5b36eebb408516ffdca09ca6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectPrefab: {fileID: 2711091180080562424, guid: c486fd428b1c0204d870f8500160c226, type: 3}
+  _poolSize: 2
 --- !u!1 &1736529192
 GameObject:
   m_ObjectHideFlags: 0

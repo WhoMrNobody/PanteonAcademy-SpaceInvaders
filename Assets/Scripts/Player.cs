@@ -7,7 +7,8 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] ObjectPooling _objectPooling = null;
 
-    public float width;
+    [HideInInspector] public float width;
+
     Camera _camera;
     float _speed = 3.0f;
     bool _isShooting;

@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class DestroyAfterSeconds : MonoBehaviour
 {
-    [SerializeField] float _second;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Destroy(gameObject, _second);
-    }
-
+    [SerializeField] float _bulletDeactivePos;
+ 
     void Update()
     {
-        if(transform.position.y > 7f)
+        if(transform.position.y > _bulletDeactivePos || transform.position.y < -_bulletDeactivePos)
         {
             gameObject.SetActive(false);
         }
