@@ -5,11 +5,14 @@ using UnityEngine;
 public class AlienMaster : MonoBehaviour
 {
     [SerializeField] ObjectPooling _pooling = null;
+    [SerializeField] ObjectPooling _motherShipObjectPool = null;
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] Player _player;
+    [SerializeField] GameObject _motherShipPrefab;
 
     Vector3 _hMoveDistance = new Vector3(0.05f, 0, 0);
     Vector3 _vMoveDistance = new Vector3(0, 0.15f, 0);
+    Vector3 _motherShipSpawnPos = new Vector3(6f, 6.5f, 0);
 
     //const float MAX_LEFT = -2.8f;
     //const float MAX_RIGHT = 2.8f;
@@ -23,6 +26,11 @@ public class AlienMaster : MonoBehaviour
     float _width;
     float _shootTimer = 3f;
     const float ShootTime = 3f;
+
+    const float MOTHERSHIP_MIN = 15f;
+    const float MOTHERSHIP_MAX = 60f;
+    float _motherShipTimer = 30f;
+
     void Start()
     {
         _width = _player.width - 0.15f;
@@ -46,6 +54,12 @@ public class AlienMaster : MonoBehaviour
             Shoot();
         }
 
+        if(_motherShipTimer <= 0)
+        {
+            SpawnMotherShip();
+        }
+
+        _motherShipTimer -= Time.deltaTime;
         _shootTimer -= Time.deltaTime;
         _moveTimer -= Time.deltaTime;
     }
@@ -96,7 +110,6 @@ public class AlienMaster : MonoBehaviour
         }
 
     }
-
     void Shoot()
     {
         Vector2 pos = _allAliens[Random.Range(0, _allAliens.Count)].transform.position;
@@ -105,5 +118,13 @@ public class AlienMaster : MonoBehaviour
         obj.transform.position = pos;
 
         _shootTimer = ShootTime;
+    }
+
+    void SpawnMotherShip()
+    {
+        GameObject obj = _motherShipObjectPool.GetPooledObject();
+        obj.transform.position = _motherShipSpawnPos;
+        _motherShipTimer = Random.Range(MOTHERSHIP_MIN, MOTHERSHIP_MAX);
+
     }
 }
