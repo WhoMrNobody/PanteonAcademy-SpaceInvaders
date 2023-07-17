@@ -12,7 +12,7 @@ public class AlienMaster : MonoBehaviour
 
     Vector3 _hMoveDistance = new Vector3(0.05f, 0, 0);
     Vector3 _vMoveDistance = new Vector3(0, 0.15f, 0);
-    Vector3 _motherShipSpawnPos = new Vector3(6f, 6.5f, 0);
+    Vector3 _motherShipSpawnPos = new Vector3(6f, 5.7f, 0);
 
     //const float MAX_LEFT = -2.8f;
     //const float MAX_RIGHT = 2.8f;
