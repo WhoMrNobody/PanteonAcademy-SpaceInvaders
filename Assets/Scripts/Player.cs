@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using Unity.VisualScripting;
@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     bool _isShooting;
     Vector2 _offScreenPos = new Vector2(0, -20);
     Vector2 _startPos = new Vector2(0, -6);
+    float _dirX;
 
     void Awake()
     {
@@ -29,6 +30,8 @@ public class Player : MonoBehaviour
         shipStats.CurrentHealth = shipStats.MaxHealth;
         shipStats.CurrentLifes = shipStats.MaxLifes;
         transform.position = _startPos;
+        UIManager.UpdateHealthBar(shipStats.CurrentHealth);
+        UIManager.UpdateLives(shipStats.CurrentLifes);
     }
 
     void Update()
@@ -47,6 +50,18 @@ public class Player : MonoBehaviour
     }
 
 #endif
+
+        _dirX = Input.acceleration.x; //Telefonu hareket ettirerek elde edilen X değeri
+
+        if(_dirX <= -0.1f && transform.position.x > -width)
+        {
+            transform.Translate(Vector2.left * Time.deltaTime * shipStats.ShipSpeed);
+        }
+
+        if( _dirX >= 0.1f &&  transform.position.x < width)
+        {
+            transform.Translate(Vector2.right * Time.deltaTime * shipStats.ShipSpeed);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -55,6 +70,14 @@ public class Player : MonoBehaviour
         {   
             collision.gameObject.SetActive(false);
             TakeDamege();
+        }
+    }
+
+    public void ShootButton()
+    {
+        if(!_isShooting)
+        {
+            StartCoroutine(Shoot());
         }
     }
 
@@ -79,15 +102,18 @@ public class Player : MonoBehaviour
         shipStats.CurrentHealth = shipStats.MaxHealth;
 
         transform.position = _startPos;
+        UIManager.UpdateHealthBar(shipStats.CurrentHealth);
     }
 
     public void TakeDamege()
     {
-        shipStats.CurrentLifes--;
+        shipStats.CurrentHealth--;
+        UIManager.UpdateHealthBar(shipStats.CurrentHealth);
 
         if(shipStats.CurrentLifes <= 0)
         {
             shipStats.CurrentLifes--;
+            UIManager.UpdateLives(shipStats.CurrentLifes);
 
             if(shipStats.CurrentLifes <= 0)
             {

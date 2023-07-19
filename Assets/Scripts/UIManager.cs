@@ -34,12 +34,21 @@ public class UIManager : MonoBehaviour
 
     public static void UpdateLives(int l)
     {
+        foreach (Image item in Instance._lifeSprites)
+        {
+            item.color = Instance._inactive;
+        }
 
+        for (int i = 0; i < l; i++)
+        {
+            Instance._lifeSprites[i].color = Instance._active;
+        }
     }
 
     public static void UpdateScore(int s)
     {
-
+        Instance._score += s;
+        Instance._scoreText.text = Instance._score.ToString("000,000");
     }
 
     public static void UpdateHighScore()
@@ -49,12 +58,18 @@ public class UIManager : MonoBehaviour
 
     public static void UpdateWave()
     {
-
+        Instance._wave++;
+        Instance._waveText.text = Instance._wave.ToString();
     }
 
     public static void UpdateCoins()
     {
 
+    }
+
+    public static void UpdateHealthBar(int h)
+    {
+        Instance._healthBar.sprite = Instance._healthBars[h];
     }
    
 }

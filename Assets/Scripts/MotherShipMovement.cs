@@ -19,4 +19,15 @@ public class MotherShipMovement : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("FriendlyBullet"))
+        {
+            UIManager.UpdateScore(_scoreValue);
+            collision.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+
+        }
+    }
 }

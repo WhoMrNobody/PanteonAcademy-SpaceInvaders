@@ -166,4 +166,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _explosion: {fileID: 4812088061447213674, guid: 9c7fd4a86f31b544f8c76468f9d16288, type: 3}
-  ScoreValue: 0
+  ScoreValue: 1
