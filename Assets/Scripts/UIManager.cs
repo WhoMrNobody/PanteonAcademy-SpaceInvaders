@@ -64,7 +64,7 @@ public class UIManager : MonoBehaviour
 
     public static void UpdateCoins()
     {
-
+        Instance._coinText.text = Inventory.CurrentCoins.ToString();
     }
 
     public static void UpdateHealthBar(int h)
