@@ -8,6 +8,9 @@ TagManager:
   - EnemyBullet
   - PlayerShield
   - FriendlyBullet
+  - Coin
+  - Life
+  - Health
   layers:
   - Default
   - TransparentFX

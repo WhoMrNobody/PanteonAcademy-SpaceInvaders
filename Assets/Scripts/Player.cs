@@ -81,11 +81,36 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void AddHealth()
+    {
+        if(shipStats.CurrentHealth == shipStats.MaxHealth)
+        {
+            UIManager.UpdateScore(250);
+        }
+        else
+        {
+            shipStats.CurrentHealth++;
+            UIManager.UpdateHealthBar(shipStats.CurrentHealth);
+        }
+    }
+
+    public void AddLifes()
+    {
+        if(shipStats.CurrentLifes == shipStats.MaxLifes)
+        {
+            UIManager.UpdateScore(1000);
+        }
+        else
+        {
+            shipStats.CurrentLifes++;
+            UIManager.UpdateLives(shipStats.CurrentLifes);
+        }
+    }
+
     IEnumerator Shoot()
     {
         _isShooting = true;
 
-        //Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
         GameObject obj = _objectPooling.GetPooledObject();
         obj.transform.position = gameObject.transform.position; 
         yield return new WaitForSeconds(shipStats.FireRate);
