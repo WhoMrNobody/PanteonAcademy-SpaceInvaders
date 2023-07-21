@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        SpawnWave();
+        SpawnNewWave();
     }
 
     public static void SpawnNewWave()
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        _currentSet = Instantiate(_allAliensSet[Random.Range(0, _allAliensSet.Length)], _spawnPos, Quaternion.identity );
+        _currentSet = Instantiate(_allAliensSet[Random.Range(0, _allAliensSet.Length)], _spawnPos, Quaternion.identity);
 
         UIManager.UpdateWave();
     }
