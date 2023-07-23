@@ -11,10 +11,8 @@ public class AlienMaster : MonoBehaviour
 
     Vector3 _hMoveDistance = new Vector3(0.08f, 0, 0);
     Vector3 _vMoveDistance = new Vector3(0, 0.40f, 0);
-    Vector3 _motherShipSpawnPos = new Vector3(6f, 5.7f, 0);
+    Vector3 _motherShipSpawnPos = new Vector3(6f, 2.7f, 0);
 
-    //const float MAX_LEFT = -2.8f;
-    //const float MAX_RIGHT = 2.8f;
     const float MAX_MOVE_SPEED = 0.0001f;
 
     public static List<GameObject> _allAliens = new List<GameObject>();
@@ -68,7 +66,7 @@ public class AlienMaster : MonoBehaviour
                 MoveEnemies();
             }
 
-            if (_shootTimer <= 0)
+            if (_shootTimer <= 0 && _allAliens.Count >= 0)
             {
                 Shoot();
             }
@@ -144,8 +142,7 @@ public class AlienMaster : MonoBehaviour
 
     void SpawnMotherShip()
     {
-        GameObject obj = _motherShipObjectPool.GetPooledObject();
-        obj.transform.position = _motherShipSpawnPos;
+        Instantiate(_motherShipPrefab, _motherShipSpawnPos, Quaternion.identity);
         _motherShipTimer = Random.Range(MOTHERSHIP_MIN, MOTHERSHIP_MAX);
 
     }

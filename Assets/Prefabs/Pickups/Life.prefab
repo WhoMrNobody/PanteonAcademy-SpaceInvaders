@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6921390291138826314}
   - component: {fileID: 4716810846417615585}
   - component: {fileID: 1432704382458947996}
+  - component: {fileID: 4538085116151937177}
+  - component: {fileID: 8001091729586079351}
   m_Layer: 0
   m_Name: Life
   m_TagString: Life
@@ -180,3 +182,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4538085116151937177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8613071916098889423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b4fb36c1d9a7e4e847aac43592b015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fallSpeed: 10
+--- !u!114 &8001091729586079351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8613071916098889423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4dfb46a621e05469e53e5934a29b50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletDeactivePos: -6

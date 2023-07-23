@@ -5,11 +5,10 @@ using UnityEngine;
 public class MotherShipMovement : MonoBehaviour
 {
     [SerializeField] int _scoreValue;
+    [SerializeField] float _movementSpeed = 2f;
 
-    const float MAX_LEFT = -6f;
+    const float MAX_LEFT = -8f;
 
-    float _movementSpeed = 5f;
-    
     void Update()
     {
         transform.Translate(Vector2.left * Time.deltaTime * _movementSpeed);
@@ -20,7 +19,7 @@ public class MotherShipMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("FriendlyBullet"))
         {
