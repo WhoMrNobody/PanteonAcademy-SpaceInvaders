@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pooling: {fileID: 8333121711577185623}
-  _motherShipObjectPool: {fileID: 0}
+  _motherShipObjectPool: {fileID: 1870617479090633076, guid: 12a4e8176e81dd64aa169c61daf7cf6b, type: 3}
   _bulletPrefab: {fileID: 2711091180080562424, guid: c486fd428b1c0204d870f8500160c226, type: 3}
   _motherShipPrefab: {fileID: 4236431541997089806, guid: 3cf9620c78e99d349ae97301ad39899f, type: 3}
 --- !u!114 &8333121711577185623
@@ -2262,6 +2262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreValue: 5
+  _movementSpeed: 2
 --- !u!114 &1623087611260018789
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -32,12 +32,12 @@ Transform:
   m_Children:
   - {fileID: 946895346931785739}
   - {fileID: 1016456081462967349}
-  - {fileID: 5506360740182723967}
+  - {fileID: 1946932332575507972}
   - {fileID: 7583520040425599348}
   - {fileID: 6271981690701385679}
   - {fileID: 7327287865694902020}
   - {fileID: 2337281759829169493}
-  - {fileID: 6754965907554437729}
+  - {fileID: 5966963456591803567}
   - {fileID: 175624402297893687}
   - {fileID: 6697739460740138348}
   - {fileID: 597448725771092824}
@@ -58,9 +58,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pooling: {fileID: 7750933262553694555}
-  _motherShipObjectPool: {fileID: 0}
+  _motherShipObjectPool: {fileID: 1870617479090633076, guid: 12a4e8176e81dd64aa169c61daf7cf6b, type: 3}
   _bulletPrefab: {fileID: 2711091180080562424, guid: c486fd428b1c0204d870f8500160c226, type: 3}
-  _player: {fileID: 0}
   _motherShipPrefab: {fileID: 4236431541997089806, guid: 3cf9620c78e99d349ae97301ad39899f, type: 3}
 --- !u!114 &7750933262553694555
 MonoBehaviour:
@@ -599,7 +598,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bb3f296163695441a163c31d393da61, type: 3}
---- !u!4 &5506360740182723967 stripped
+--- !u!4 &1946932332575507972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6300079922670816122, guid: 6bb3f296163695441a163c31d393da61, type: 3}
   m_PrefabInstance: {fileID: 5506360740182723966}
@@ -797,7 +796,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 693efe6eb55310c4d8ac160f17ce02f6, type: 3}
---- !u!4 &6754965907554437729 stripped
+--- !u!4 &5966963456591803567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1112560710632357583, guid: 693efe6eb55310c4d8ac160f17ce02f6, type: 3}
   m_PrefabInstance: {fileID: 6754965907554437728}
